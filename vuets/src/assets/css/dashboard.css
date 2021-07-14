@@ -1,0 +1,43 @@
+.card.ongoing {
+  border-left: 4px orange solid !important;
+}
+
+.card.complete {
+  border-left: 4px #3cd1c2 solid !important;
+}
+
+.card.overdue {
+  border-left: 4px tomato solid !important;
+}
+
+.noborder {
+  border: none !important;
+}
+
+.dash-title {
+  margin-bottom: 4rem;
+}
+
+.match {
+  height: 5.2rem;
+}
+
+.chip.ongoing {
+  background-color: orange !important;
+  color: white;
+}
+
+.chip.complete {
+  background-color: #3cd1c2 !important;
+  color: white;
+}
+
+.chip.overdue {
+  background-color: tomato !important;
+  color: white;
+}
+
+.sort {
+  background-color: #f0f0f0 !important;
+}
+/*# sourceMappingURL=dashboard.css.map */

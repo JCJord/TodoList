@@ -16,9 +16,3 @@ import TheHeader from "./components/header/TheHeader.vue";
 })
 export default class App extends Vue {}
 </script>
-<style scoped>
-h1 {
-  margin-top: 100px;
-  border: dotted;
-}
-</style>

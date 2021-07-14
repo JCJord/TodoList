@@ -5,6 +5,7 @@ import store from "./store";
 import vuetify from "./plugins/vuetify";
 import "./assets/css/main.css";
 import "./assets/css/header.css";
+import "./assets/css/dashboard.css";
 
 Vue.config.productionTip = false;
 

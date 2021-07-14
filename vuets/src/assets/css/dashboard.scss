@@ -1,0 +1,40 @@
+@import "../css/variables";
+
+@mixin cardStatus($color) {
+  border-left: 4px $color solid !important;
+}
+@mixin chipStatus($color) {
+  background-color: $color !important;
+  color: white;
+}
+.card.ongoing {
+  @include cardStatus($ongoing);
+}
+.card.complete {
+  @include cardStatus($complete);
+}
+.card.overdue {
+  @include cardStatus($overdue);
+}
+
+.noborder {
+  border: none !important;
+}
+.dash-title {
+  margin-bottom: 4rem;
+}
+.match {
+  height: 5.2rem;
+}
+.chip.ongoing {
+  @include chipStatus($ongoing);
+}
+.chip.complete {
+  @include chipStatus($complete);
+}
+.chip.overdue {
+  @include chipStatus($overdue);
+}
+.sort {
+  background-color: $bodyBg !important;
+}
