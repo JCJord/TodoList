@@ -6,4 +6,8 @@
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
 }
+
+.profile-name {
+  font-size: 1.3rem;
+}
 /*# sourceMappingURL=header.css.map */

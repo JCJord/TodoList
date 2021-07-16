@@ -10,18 +10,6 @@
   border-left: 4px tomato solid !important;
 }
 
-.noborder {
-  border: none !important;
-}
-
-.dash-title {
-  margin-bottom: 4rem;
-}
-
-.match {
-  height: 5.2rem;
-}
-
 .chip.ongoing {
   background-color: orange !important;
   color: white;
@@ -35,6 +23,18 @@
 .chip.overdue {
   background-color: tomato !important;
   color: white;
+}
+
+.noborder {
+  border: none !important;
+}
+
+.dash-title {
+  margin-bottom: 4rem;
+}
+
+.match {
+  height: 5.2rem;
 }
 
 .sort {

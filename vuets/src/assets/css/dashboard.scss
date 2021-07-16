@@ -16,16 +16,6 @@
 .card.overdue {
   @include cardStatus($overdue);
 }
-
-.noborder {
-  border: none !important;
-}
-.dash-title {
-  margin-bottom: 4rem;
-}
-.match {
-  height: 5.2rem;
-}
 .chip.ongoing {
   @include chipStatus($ongoing);
 }
@@ -35,6 +25,16 @@
 .chip.overdue {
   @include chipStatus($overdue);
 }
+.noborder {
+  border: none !important;
+}
+.dash-title {
+  margin-bottom: 4rem;
+}
+.match {
+  height: 5.2rem;
+}
+
 .sort {
   background-color: $bodyBg !important;
 }

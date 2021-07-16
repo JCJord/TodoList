@@ -1,13 +1,35 @@
 <template>
   <nav>
-    <v-toolbar app flat class="#fff"
+    <v-toolbar flat class="#fff"
       ><v-app-bar-nav-icon @click="toggler()"></v-app-bar-nav-icon>
       <v-toolbar-title class="text-uppercase grey--text toolbar-title">
-        <span class="font-weight-light ">Todo</span>
-        <span>Jord</span>
+        <span class="font-weight-light desktop-brand">Todo</span>
+        <span class="desktop-brand">Jord</span>
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
+      <div class="menu-dropdown mr-5">
+        <v-menu offset-y :rounded="'0'">
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              class="sign-out"
+              color="#fff"
+              v-bind="attrs"
+              v-on="on"
+              depressed
+            >
+              <v-icon left>expand_more</v-icon>
+              Menu
+            </v-btn>
+          </template>
+          <v-list v-for="link in links" :key="link.route">
+            <v-list-item router :to="link.route">
+              {{ link.text }}
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </div>
+
       <v-btn class="sign-out">
         <span>Sign Out</span>
         <v-icon right>exit_to_app</v-icon>
@@ -19,8 +41,20 @@
       left
       temporary
       v-model="drawer"
-      color="#9652ff"
+      color="primary"
     >
+      <div class="profile text-center pt-5">
+        <v-avatar color="primary" class="text-center" size="125"
+          ><img
+            src="https://media-exp3.licdn.com/dms/image/C4D03AQFIF8hIuNYRhA/profile-displayphoto-shrink_800_800/0/1618525030660?e=1631750400&v=beta&t=1Xz6wI4figvRBW6h0vRqv_x6F5JiQmkmayGTG_rmPyk"
+            alt=""
+        /></v-avatar>
+        <div class="profile-name pt-5 white--text">
+          <p>Júlio César</p>
+        </div>
+        <add-project></add-project>
+      </div>
+
       <v-list nav dense>
         <v-list-item-group
           v-for="link in links"
@@ -43,12 +77,13 @@
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
+import AddProject from "../dialogs/AddProject.vue";
 
-@Component
+@Component({ components: { AddProject } })
 export default class TheHeader extends Vue {
   private drawer = false;
 
-  readonly links = [
+  readonly links: any = [
     { icon: "dashboard", text: "Dashboard", route: "/" },
     { icon: "folder", text: "My Projects", route: "/projects" },
     { icon: "person", text: "Team", route: "/team" },
@@ -59,3 +94,5 @@ export default class TheHeader extends Vue {
   }
 }
 </script>
+
+<style></style>

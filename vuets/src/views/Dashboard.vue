@@ -1,22 +1,39 @@
 <template>
   <div class="dashboard">
     <v-container>
-      <h2 class="grey--text dash-title">Dashboard</h2>
+      <div class="dash-title grey--text">
+        <h2>Dashboard</h2>
+      </div>
       <v-row class="mb-1 pa-4">
-        <v-btn
-          @click="sortByTitle"
-          depressed
-          small
-          class="mr-5 text-lowercase sort grey--text"
-          ><v-icon left class="mr-4">folder</v-icon> by project name</v-btn
-        >
-        <v-btn
-          @click="sortByPerson"
-          depressed
-          small
-          class="text-lowercase sort grey--text"
-          ><v-icon class="mr-4" left>person</v-icon>by person</v-btn
-        >
+        <v-tooltip top>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              @click="sortByTitle"
+              depressed
+              small
+              v-bind="attrs"
+              v-on="on"
+              class="mr-5 text-lowercase sort grey--text"
+              ><v-icon left class="mr-4">folder</v-icon> by project name</v-btn
+            >
+          </template>
+          <span>Order projects by title</span>
+        </v-tooltip>
+        <v-tooltip top>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              @click="sortByPerson"
+              depressed
+              small
+              v-bind="attrs"
+              v-on="on"
+              class="text-lowercase sort grey--text"
+            >
+              <v-icon class="mr-4" left>person</v-icon>by person</v-btn
+            >
+          </template>
+          <span>Order projects by person</span>
+        </v-tooltip>
       </v-row>
       <div v-for="item in activities" :key="item.title">
         <v-row no-gutters :class="`card ${item.status}`">
