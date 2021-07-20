@@ -7,8 +7,15 @@
   font-family: "Open Sans", sans-serif;
 }
 
+.panel-body {
+  background-color: #f0f0f0;
+  bottom: 0;
+  height: 100%;
+}
+
 .body {
-  background-color: #f0f0f0 !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .project-btn {
@@ -17,6 +24,9 @@
 
 .intro-block {
   max-width: 1425px;
+  padding-right: 25px;
+  padding-left: 25px;
+  z-index: 1;
 }
 
 .banner-title b {
@@ -32,7 +42,31 @@
   font-size: 16px;
 }
 
-.body-home {
-  height: 1000px;
+@media only screen and (max-width: 959px) {
+  .banner-description p {
+    text-align: justify;
+    width: 100%;
+  }
+  .hr-divider {
+    visibility: hidden;
+  }
+  .line-2 {
+    margin-bottom: 0;
+  }
+  .menu-dropdown {
+    visibility: hidden;
+  }
+  .banner-row {
+    margin-top: 0 !important;
+  }
+  .intro-block {
+    margin-bottom: 10rem;
+  }
+  .banner-title b {
+    font-size: 7.6vw;
+  }
+  .banner-description p {
+    font-size: 4vw;
+  }
 }
 /*# sourceMappingURL=main.css.map */

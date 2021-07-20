@@ -1,5 +1,5 @@
 <template>
-  <div class="team">
+  <div class="team panel-body">
     <v-container>
       <div class="dash-title grey--text">
         <h2>Team</h2>

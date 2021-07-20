@@ -1,0 +1,17 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #6cf;
+}
+.media-buttons {
+  text-decoration: none;
+  color: #fff !important;
+}
+
+@media only screen and (max-width: 960px) {
+  .footer {
+    margin-top: 100px;
+    z-index: 0;
+  }
+}

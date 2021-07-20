@@ -4,29 +4,40 @@ import Home from "../views/Home.vue";
 import Dashboard from "../views/Dashboard.vue";
 import Projects from "../views/Projects.vue";
 import Team from "../views/Team.vue";
+import SignUp from "../views/SignUp.vue";
+import Login from "../views/Login.vue";
+
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
+  {
+    path: "/signup",
+    name: "SignUp",
+    component: SignUp,
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: Login,
+  },
   {
     path: "/",
     name: "Home",
     component: Home,
   },
   {
-    path: "/Dashboard",
+    path: "/dashboard",
     name: "Dashboard",
     component: Dashboard,
   },
   {
-    path: "/Projects",
+    path: "/projects",
     name: "Projects",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+
     component: Projects,
   },
   {
-    path: "/Team",
+    path: "/team",
     name: "Team",
     component: Team,
   },

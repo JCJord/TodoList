@@ -6,7 +6,7 @@ import vuetify from "./plugins/vuetify";
 import "./assets/css/main.css";
 import "./assets/css/header.css";
 import "./assets/css/dashboard.css";
-
+import "./assets/css/footer.css";
 Vue.config.productionTip = false;
 
 new Vue({

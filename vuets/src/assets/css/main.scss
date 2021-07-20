@@ -1,14 +1,24 @@
 @import "./_variables.scss";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
+@mixin paddingBoth($right, $left) {
+  padding-right: $right;
+  padding-left: $left;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
 }
-
+.panel-body {
+  background-color: $bodyBg;
+  bottom: 0;
+  height: 100%;
+}
 .body {
-  background-color: $bodyBg !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 .project-btn {
   border-radius: none !important;
@@ -16,6 +26,8 @@
 
 .intro-block {
   max-width: 1425px;
+  @include paddingBoth(25px, 25px);
+  z-index: 1;
 }
 
 .banner-title b {
@@ -28,4 +40,32 @@
 .banner-description p {
   width: 50%;
   font-size: 16px;
+}
+
+@media only screen and (max-width: 959px) {
+  .banner-description p {
+    text-align: justify;
+    width: 100%;
+  }
+  .hr-divider {
+    visibility: hidden;
+  }
+  .line-2 {
+    margin-bottom: 0;
+  }
+  .menu-dropdown {
+    visibility: hidden;
+  }
+  .banner-row {
+    margin-top: 0 !important;
+  }
+  .intro-block {
+    margin-bottom: 10rem;
+  }
+  .banner-title b {
+    font-size: 7.6vw;
+  }
+  .banner-description p {
+    font-size: 4vw;
+  }
 }
