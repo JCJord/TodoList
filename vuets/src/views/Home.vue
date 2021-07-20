@@ -29,7 +29,7 @@
         </v-col>
         <v-col cols="12" md="6" lg="6" sm="12">
           <v-img
-            lazy-src="https://picsum.photos/id/11/10/6"
+            lazy-src="https://i.imgur.com/C7cZeFA.png"
             max-width="100%"
             src="../assets/dashboard.png"
           ></v-img>

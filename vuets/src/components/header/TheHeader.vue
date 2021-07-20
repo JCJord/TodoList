@@ -3,8 +3,11 @@
     <v-toolbar flat class="#fff"
       ><v-app-bar-nav-icon @click="toggler()"></v-app-bar-nav-icon>
       <v-toolbar-title class="text-uppercase grey--text toolbar-title">
-        <span class="font-weight-light desktop-brand">Todo</span>
-        <span class="desktop-brand">Jord</span>
+        <v-img
+          class="logo"
+          max-width="150"
+          src="https://cdn.dribbble.com/users/131151/screenshots/3458266/drb_jcbear-02.png?compress=1&resize=800x600"
+        ></v-img>
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
@@ -30,10 +33,12 @@
         </v-menu>
       </div>
 
-      <v-btn class="sign-out">
-        <span>Sign Out</span>
-        <v-icon right>exit_to_app</v-icon>
-      </v-btn>
+      <div class="btn-header-box">
+        <v-btn class="sign-out">
+          <span>Sign Out</span>
+          <v-icon right>exit_to_app</v-icon>
+        </v-btn>
+      </div>
     </v-toolbar>
 
     <v-navigation-drawer

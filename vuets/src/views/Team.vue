@@ -58,7 +58,7 @@ export default class Team extends Vue {
       person: "Vinicius",
       job: "Front-end Developer",
       profileUrl:
-        "https://scontent.fbfh1-2.fna.fbcdn.net/v/t1.6435-9/102362843_2974971225873994_3698971774008950784_n.jpg?_nc_cat=104&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeFp7x_mlwet4FKBU7eg-StckkZnt0ChoCGSRme3QKGgIUEfKD0MZk7D3LAmwtARZXSo_HOzbT2noH5QRXYGFFxZ&_nc_ohc=r6vqUZ8npCcAX_cUUYT&_nc_ht=scontent.fbfh1-2.fna&oh=438c52627f196ee9c50f3a025ecf465a&oe=60F47764",
+        "https://scontent.fgru11-1.fna.fbcdn.net/v/t1.6435-9/96584611_2589248421315576_3742953841142792192_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=ad2b24&_nc_ohc=_spCh2QVKooAX_c6BdU&_nc_ht=scontent.fgru11-1.fna&oh=cad8ad4008bc82e3163a48ac4460934a&oe=60FBB5D7",
     },
     {
       person: "Mario",

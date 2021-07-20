@@ -1,10 +1,7 @@
 <template>
   <v-footer class="footer" dark padless>
     <v-card class="flex " flat tile>
-      <v-card-title
-        class="grey darken-3
- footer-bg"
-      >
+      <v-card-title class="grey darken-3 footer-bg">
         <strong class="subheading">Contact me on social networks!</strong>
 
         <v-spacer></v-spacer>
