@@ -84,7 +84,7 @@ export default class TheHeader extends Vue {
   private drawer = false;
 
   readonly links: any = [
-    { icon: "dashboard", text: "Dashboard", route: "/" },
+    { icon: "dashboard", text: "Dashboard", route: "/dashboard" },
     { icon: "folder", text: "My Projects", route: "/projects" },
     { icon: "person", text: "Team", route: "/team" },
   ];

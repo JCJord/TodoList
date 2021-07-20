@@ -8,14 +8,14 @@
       <v-row>
         <v-col
           v-for="people in team"
-          :key="people"
+          :key="people.person"
           cols="12"
           xs="4"
           md="4"
           sm="4"
           lg="3"
         >
-          <v-card :loading="loading" class="text-center" flat>
+          <v-card class="text-center" flat>
             <div class="pt-5">
               <v-avatar color="primary" size="125"
                 ><img :src="people.profileUrl" alt=""
