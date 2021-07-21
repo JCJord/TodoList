@@ -7,6 +7,8 @@ import "./assets/css/main.css";
 import "./assets/css/header.css";
 import "./assets/css/dashboard.css";
 import "./assets/css/footer.css";
+import "./assets/css/form.css";
+
 Vue.config.productionTip = false;
 
 new Vue({

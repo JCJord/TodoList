@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <TheHeader></TheHeader>
+    <TheHeader v-if="!['SignUp', 'Login'].includes($route.name)"></TheHeader>
     <v-main><router-view></router-view></v-main>
   </v-app>
 </template>

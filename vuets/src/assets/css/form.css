@@ -1,0 +1,30 @@
+.form-container {
+  max-width: 800px;
+}
+
+.form-card {
+  position: relative;
+  top: 2rem !important;
+}
+
+.form-title {
+  font-size: 24px;
+}
+
+.form-logo-box {
+  text-align: center;
+}
+
+.form-logo {
+  max-width: 150px;
+  height: 80px;
+}
+
+.tip-form a {
+  text-decoration: none;
+}
+
+.form-button {
+  color: white !important;
+}
+/*# sourceMappingURL=form.css.map */
