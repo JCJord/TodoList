@@ -49,7 +49,7 @@
       color="primary"
     >
       <div class="profile text-center pt-5">
-        <v-avatar color="primary" class="text-center" size="125"
+        <v-avatar color="grey" class="text-center" size="125"
           ><img
             src="https://media-exp3.licdn.com/dms/image/C4D03AQFIF8hIuNYRhA/profile-displayphoto-shrink_800_800/0/1618525030660?e=1631750400&v=beta&t=1Xz6wI4figvRBW6h0vRqv_x6F5JiQmkmayGTG_rmPyk"
             alt=""

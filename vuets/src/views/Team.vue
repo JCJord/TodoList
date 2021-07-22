@@ -17,7 +17,7 @@
         >
           <v-card class="text-center" flat>
             <div class="pt-5">
-              <v-avatar color="primary" size="125"
+              <v-avatar color="grey" size="125"
                 ><img :src="people.profileUrl" alt=""
               /></v-avatar>
             </div>

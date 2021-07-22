@@ -14,13 +14,12 @@
       required
     ></v-text-field>
 
-    <v-select
-      v-model="select"
-      :items="items"
-      :rules="[(v) => !!v || 'Item is required']"
-      label="Item"
+    <v-text-field
+      v-model="email"
+      :rules="emailRules"
+      label="Role"
       required
-    ></v-select>
+    ></v-text-field>
 
     <v-checkbox
       v-model="checkbox"
@@ -29,7 +28,7 @@
       required
     ></v-checkbox>
 
-    <v-btn depressed block color="light" class="mr-4" @click="validate">
+    <v-btn depressed block color="#e6e6e6" @click="validate">
       Sign Up
     </v-btn>
   </v-form>
