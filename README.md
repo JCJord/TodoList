@@ -18,3 +18,11 @@ Aplicação contém uma página para acompanhar sua atividade e seus detalhes
 ### Projetos
 ![image](https://user-images.githubusercontent.com/69487022/126722551-6b547f0c-114c-4c50-bb58-f951865269a5.png)
 
+### Tecnologias utilizadas
+
+<li>Vue.js</li>
+<li>Vuetify</li>
+<li>Typescript</li>
+<li>Api Node.js</li>
+
+#### Projeto em desenvolvimento
