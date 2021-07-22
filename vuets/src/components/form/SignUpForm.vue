@@ -74,6 +74,7 @@ export default class SignUpForm extends Vue {
   passwordRules = [
     (v: any) => !!v || "Password is required",
     (v: any) => v.length >= 8 || "Password must be at least 8 characters long",
+    (v: any) => v.length <= 255 || "Password too big",
   ];
 
   submit(): void {
