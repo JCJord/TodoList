@@ -25,4 +25,4 @@ Aplicação contém uma página para acompanhar sua atividade e seus detalhes
 <li>Typescript</li>
 <li>Api Node.js</li>
 
-#### Projeto em desenvolvimento
+#### Projeto em desenvolvimento ! :gear: :wrench:  :hammer_and_wrench:
