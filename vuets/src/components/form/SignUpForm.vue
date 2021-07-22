@@ -3,6 +3,7 @@
     <v-text-field
       v-model="name"
       :rules="nameRules"
+      prepend-icon="person"
       label="Name"
       required
     ></v-text-field>
@@ -10,6 +11,7 @@
     <v-text-field
       v-model="email"
       :rules="emailRules"
+      prepend-icon="mail"
       label="E-mail"
       required
     ></v-text-field>
@@ -17,10 +19,18 @@
     <v-text-field
       v-model="email"
       :rules="emailRules"
+      prepend-icon="work"
       label="Role"
       required
     ></v-text-field>
-
+    <v-text-field
+      v-model="password"
+      :type="'password'"
+      :rules="emailRules"
+      prepend-icon="lock"
+      label="Password"
+      required
+    ></v-text-field>
     <v-checkbox
       v-model="checkbox"
       :rules="[(v) => !!v || 'You must agree to continue!']"
