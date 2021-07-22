@@ -3,11 +3,14 @@
     <v-text-field
       v-model="email"
       :rules="emailRules"
+      prepend-icon="mail"
       label="E-mail"
       required
     ></v-text-field>
     <v-text-field
-      v-model="email"
+      v-model="password"
+      :type="'password'"
+      prepend-icon="lock"
       :rules="emailRules"
       label="Password"
       required

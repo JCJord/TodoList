@@ -92,6 +92,7 @@ export default class AddProject extends Vue {
   due = "";
   menu = null;
   dialog = false;
+
   titleRules = [
     (v: any) => !!v || "Title is required",
     (v: any) => v.length <= 16 || "Title must be less than 24 characters",

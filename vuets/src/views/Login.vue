@@ -11,8 +11,8 @@
               alt=""
             />
           </div>
-          <div class="form-title">
-            <b>Welcome back</b>
+          <div class="form-title text-center">
+            <b>Welcome back!</b>
           </div>
           <sign-in></sign-in>
         </v-card>
