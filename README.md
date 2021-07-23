@@ -20,6 +20,8 @@ Aplicação contém uma página para acompanhar sua atividade e seus detalhes
 
 ### Tecnologias utilizadas
 
+<li>HTML</li>
+<li>SCSS</li>
 <li>Vue.js</li>
 <li>Vuetify</li>
 <li>Typescript</li>
