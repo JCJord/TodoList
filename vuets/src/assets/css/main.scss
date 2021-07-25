@@ -27,6 +27,7 @@
 .intro-block {
   max-width: 1425px;
   @include paddingBoth(25px, 25px);
+  margin-bottom: 135px;
   z-index: 1;
 }
 .logo {
@@ -54,7 +55,7 @@
     visibility: hidden;
   }
   .line-2 {
-    margin-bottom: 0;
+    margin-bottom:0;
   }
   .menu-dropdown {
     display: none;
