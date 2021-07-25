@@ -10,11 +10,15 @@
           lg="6"
           sm="12"
         >
-          <div class="banner-title">
-            <b>
-              Work on big ideas,
-            </b>
+        
+          <div  class="banner-title" >
+            <transition name="fade">
+              <b v-if="show">
+                Work on big ideas,
+              </b>
+            </transition>
           </div>
+          
 
           <div class="banner-title line-2">
             <b>without the busywork.</b>
@@ -57,5 +61,13 @@ import PageIntro from "../components/sections/PageIntro.vue";
 import { Vue, Component } from "vue-property-decorator";
 
 @Component({ components: { TheFooter, PageIntro } })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  show=false;
+
+  mounted(){
+    setTimeout(()=>{
+      this.show = true;
+    },1000)
+  }
+}
 </script>

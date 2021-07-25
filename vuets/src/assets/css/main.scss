@@ -27,11 +27,14 @@
 .intro-block {
   max-width: 1425px;
   @include paddingBoth(25px, 25px);
-  margin-bottom: 135px;
+  margin-bottom: 145px;
   z-index: 1;
 }
 .logo {
   min-width: 150px;
+}
+.banner-title{
+  min-height: 57px;
 }
 
 .banner-title b {
@@ -45,8 +48,16 @@
   width: 50%;
   font-size: 16px;
 }
-
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 @media only screen and (max-width: 959px) {
+  .banner-title{
+    min-height: 45px;
+  }
   .banner-description p {
     text-align: justify;
     width: 100%;
@@ -64,7 +75,7 @@
     margin-top: 0 !important;
   }
   .intro-block {
-    margin-bottom: 10rem;
+    margin-bottom: 12rem;
   }
   .banner-title b {
     font-size: 7.6vw;
