@@ -25,6 +25,7 @@
 import { Vue, Component } from "vue-property-decorator";
 import SignUpForm from "../components/form/SignUpForm.vue";
 
+
 @Component({
   components: {
     "sign-up": SignUpForm,

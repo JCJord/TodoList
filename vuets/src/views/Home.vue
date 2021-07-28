@@ -10,23 +10,20 @@
           lg="6"
           sm="12"
         >
-          <div class="animation-box-fixed-1">
+        
+          <div  class="banner-title" >
             <transition name="fade">
-              <div v-if="show" class="banner-title">
-                <b>
-                  Work on big ideas,
-                </b>
-              </div>
+              <b v-if="show">
+                Work on big ideas,
+              </b>
             </transition>
+          </div>
+          
+
+          <div class="banner-title line-2">
+            <b>without the busywork.</b>
           </div>
 
-          <div class="animation-box-fixed-2">
-            <transition name="fade">
-              <div v-if="show" class="banner-title line-2">
-                <b>without the busywork.</b>
-              </div>
-            </transition>
-          </div>
           <div class="hr-divider">
             <hr style="width:70px;" class="mb-4" />
           </div>
@@ -65,11 +62,12 @@ import { Vue, Component } from "vue-property-decorator";
 
 @Component({ components: { TheFooter, PageIntro } })
 export default class Home extends Vue {
-  show = false;
-  mounted() {
-    setTimeout(() => {
+  show=false;
+
+  mounted(){
+    setTimeout(()=>{
       this.show = true;
-    }, 1000);
+    },1000)
   }
 }
 </script>

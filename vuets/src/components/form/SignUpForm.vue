@@ -45,50 +45,54 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
+import firebase from "firebase/app"
+import "firebase/auth"
+import "vue-router"
+import { Vue, Component } from "vue-property-decorator"
+
 @Component
 export default class SignUpForm extends Vue {
-  show = false;
-  valid = false;
-  name = "";
-  email = "";
-  role = "";
-  password = "";
-  checkbox = "";
+  show = false
+  valid = false
+  name = ""
+  email = ""
+  role = ""
+  password = ""
+  checkbox = ""
 
   nameRules = [
     (v: any) => !!v || "Name is required",
     (v: any) => v.length <= 16 || "Name must be less than 24 characters",
-  ];
+  ]
 
   emailRules = {
     required: (v: any) => !!v || "Email is required",
     valid: (v: any) => /.+@.+\..+/.test(v) || "E-mail must be valid",
     min: (v: any) => v.length <= 64 || "E-mail Too big",
-  };
+  }
 
   roleRules = [
     (v: any) => !!v || "Role is required",
     (v: any) => v.length >= 3 || "Role is invalid",
-  ];
+  ]
   passwordRules = [
     (v: any) => !!v || "Password is required",
     (v: any) => v.length >= 8 || "Password must be at least 8 characters long",
     (v: any) => v.length <= 255 || "Password too big",
-  ];
+  ]
 
-  submit(): void {
+  async submit(): Promise<void> {
     if ((this.$refs.form as Vue & { validate: () => boolean }).validate()) {
-      console.log(
-        "nome: " +
-          this.name +
-          " email: " +
-          this.email +
-          " role : " +
-          this.role +
-          " password : " +
-          this.password
-      );
+      try {
+        alert(this.email)
+        const user = await firebase
+          .auth()
+          .createUserWithEmailAndPassword(this.email, this.password)
+
+        this.$router.push("/login")
+      } catch (errr) {
+        console.log(errr)
+      }
     }
   }
 }

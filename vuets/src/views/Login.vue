@@ -22,8 +22,8 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
-import SignInForm from "../components/form/SignInForm.vue";
+import { Vue, Component } from "vue-property-decorator"
+import SignInForm from "../components/form/SignInForm.vue"
 @Component({
   components: {
     "sign-in": SignInForm,

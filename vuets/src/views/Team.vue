@@ -48,7 +48,7 @@ export default class Team extends Vue {
       job: "Back-end Developer",
       profileUrl: "https://images.virgula.com.br/2016/06/mark-zuckerberg.jpg",
     },
-    {
+   { 
       person: "Júlio César",
       job: "Front-end Developer",
       profileUrl:

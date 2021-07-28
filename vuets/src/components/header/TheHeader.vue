@@ -32,10 +32,20 @@
           </v-list>
         </v-menu>
       </div>
-
+      Logged in
+      <div v-if="this.$store.state.isLogged">Yes</div>
+      <div v-else>No</div>
       <div class="btn-header-box">
-        <v-btn class="sign-out">
+        <v-btn
+          v-if="this.$store.state.isLogged"
+          class="sign-out"
+          @click="signOut"
+        >
           <span>Sign Out</span>
+          <v-icon right>exit_to_app</v-icon>
+        </v-btn>
+        <v-btn v-else class="sign-out">
+          <span>Sign In</span>
           <v-icon right>exit_to_app</v-icon>
         </v-btn>
       </div>
@@ -81,21 +91,46 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
-import AddProject from "../dialogs/AddProject.vue";
-
+import { Vue, Component } from "vue-property-decorator"
+import AddProject from "../dialogs/AddProject.vue"
+import firebase from "firebase/app"
+import "firebase/auth"
+import "vue-router"
+import { Store } from "vuex"
 @Component({ components: { AddProject } })
 export default class TheHeader extends Vue {
-  private drawer = false;
+  private drawer = false
 
   readonly links: any = [
     { icon: "dashboard", text: "Dashboard", route: "/dashboard" },
     { icon: "folder", text: "My Projects", route: "/projects" },
     { icon: "person", text: "Team", route: "/team" },
-  ];
+  ]
+
+  created() {
+    firebase.auth().onAuthStateChanged((user) => {
+      this.$store.state.isLogged = !!user
+
+      if (user) {
+        this.$store.state.isLogged = true
+      } else {
+        this.$store.state.isLogged = false
+      }
+    })
+  }
 
   toggler(): boolean {
-    return (this.drawer = !this.drawer);
+    return (this.drawer = !this.drawer)
+  }
+
+  async signOut(): Promise<void> {
+    try {
+      const data = await firebase.auth().signOut()
+      console.log(data)
+      this.$router.push("/login")
+    } catch (err) {
+      console.log(err)
+    }
   }
 }
 </script>
