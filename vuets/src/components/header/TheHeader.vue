@@ -32,9 +32,7 @@
           </v-list>
         </v-menu>
       </div>
-      Logged in
-      <div v-if="this.$store.state.isLogged">Yes</div>
-      <div v-else>No</div>
+
       <div class="btn-header-box">
         <v-btn
           v-if="this.$store.state.isLogged"
@@ -42,11 +40,11 @@
           @click="signOut"
         >
           <span>Sign Out</span>
-          <v-icon right>exit_to_app</v-icon>
+          <v-icon right>logout</v-icon>
         </v-btn>
-        <v-btn v-else class="sign-out">
+        <v-btn v-else router to="Login" class="sign-out">
           <span>Sign In</span>
-          <v-icon right>exit_to_app</v-icon>
+          <v-icon right>login</v-icon>
         </v-btn>
       </div>
     </v-toolbar>
@@ -57,6 +55,7 @@
       temporary
       v-model="drawer"
       color="primary"
+      v-if="this.$store.state.isLogged"
     >
       <div class="profile text-center pt-5">
         <v-avatar color="grey" class="text-center" size="125"
@@ -87,6 +86,60 @@
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
+
+    <v-navigation-drawer
+      absolute
+      left
+      temporary
+      v-model="drawer"
+      color="primary"
+      v-else
+    >
+      <div class="profile text-center pt-5 pb-5">
+        <h3>Welcome !</h3>
+      </div>
+      <v-list nav dense>
+        <v-list-item-group
+          v-for="link in linksNotLogged"
+          :key="link.text"
+          class="side-tile"
+        >
+          <v-list-item router :to="link.route">
+            <v-list-item-icon>
+              <v-icon class="white--text">{{ link.icon }}</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title class="white--text ">
+              {{ link.text }}
+            </v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+
+        <a href="https://github.com/JCJord">
+          <v-list-item-group>
+            <v-list-item>
+              <v-list-item-icon>
+                <v-icon class="white--text">device_hub</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title class="white--text ">
+                My github
+              </v-list-item-title>
+            </v-list-item>
+          </v-list-item-group>
+        </a>
+        <a href="https://www.linkedin.com/in/jc-jord/">
+          <v-list-item-group>
+            <v-list-item>
+              <v-list-item-icon>
+                <v-icon class="white--text">link</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title class="white--text ">
+                My Linkedin
+              </v-list-item-title>
+            </v-list-item>
+          </v-list-item-group>
+        </a>
+      </v-list>
+    </v-navigation-drawer>
   </nav>
 </template>
 
@@ -105,6 +158,10 @@ export default class TheHeader extends Vue {
     { icon: "dashboard", text: "Dashboard", route: "/dashboard" },
     { icon: "folder", text: "My Projects", route: "/projects" },
     { icon: "person", text: "Team", route: "/team" },
+  ]
+  readonly linksNotLogged: any = [
+    { icon: "login", text: "Sign In", route: "/login" },
+    { icon: "logout", text: "Sign Up", route: "/signUp" },
   ]
 
   created() {
@@ -127,7 +184,7 @@ export default class TheHeader extends Vue {
     try {
       const data = await firebase.auth().signOut()
       console.log(data)
-      this.$router.push("/login")
+      this.$router.push("/")
     } catch (err) {
       console.log(err)
     }

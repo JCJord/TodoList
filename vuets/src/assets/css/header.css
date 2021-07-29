@@ -4,10 +4,13 @@
 
 .sign-out {
   -webkit-box-shadow: none !important;
-          box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 .profile-name {
   font-size: 1.3rem;
+}
+.profile h3 {
+  color: #fff !important;
 }
 /*# sourceMappingURL=header.css.map */

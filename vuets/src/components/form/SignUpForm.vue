@@ -38,7 +38,7 @@
       required
     ></v-checkbox>
 
-    <v-btn depressed block @click="submit" color="#e6e6e6">
+    <v-btn depressed block @click="submit" color="#e6e6e6" :loading="loading">
       Sign Up
     </v-btn>
   </v-form>
@@ -59,6 +59,7 @@ export default class SignUpForm extends Vue {
   role = ""
   password = ""
   checkbox = ""
+  loading = false
 
   nameRules = [
     (v: any) => !!v || "Name is required",
@@ -81,14 +82,20 @@ export default class SignUpForm extends Vue {
     (v: any) => v.length <= 255 || "Password too big",
   ]
 
+  async finishLoad(): Promise<boolean> {
+    return (this.loading = false)
+  }
+
   async submit(): Promise<void> {
     if ((this.$refs.form as Vue & { validate: () => boolean }).validate()) {
       try {
-        alert(this.email)
-        const user = await firebase
+        this.loading = true
+
+        await firebase
           .auth()
           .createUserWithEmailAndPassword(this.email, this.password)
 
+        this.finishLoad()
         this.$router.push("/login")
       } catch (errr) {
         console.log(errr)

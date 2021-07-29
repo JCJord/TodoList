@@ -20,7 +20,13 @@
       </router-link>
     </div>
 
-    <v-btn block color="#2196F3" class="mr-4 form-button" @click="logIn">
+    <v-btn
+      block
+      color="#2196F3"
+      class="mr-4 form-button"
+      @click="logIn"
+      :loading="loading"
+    >
       Sign In
     </v-btn>
   </v-form>
@@ -36,13 +42,19 @@ import { Vue, Component } from "vue-property-decorator"
 export default class SignInForm extends Vue {
   email = ""
   password = ""
+  loading = false
 
+  async finishLoad(): Promise<boolean> {
+    return (this.loading = true)
+  }
   async logIn(): Promise<void> {
     try {
+      this.loading = true
       const data = await firebase
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
-      alert(data)
+
+      this.finishLoad()
 
       this.$router.push("/dashboard")
     } catch (err) {
