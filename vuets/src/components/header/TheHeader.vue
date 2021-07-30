@@ -149,22 +149,22 @@ import AddProject from "../dialogs/AddProject.vue"
 import firebase from "firebase/app"
 import "firebase/auth"
 import "vue-router"
-import { Store } from "vuex"
+
 @Component({ components: { AddProject } })
 export default class TheHeader extends Vue {
   private drawer = false
 
-  readonly links: any = [
+  readonly links = [
     { icon: "dashboard", text: "Dashboard", route: "/dashboard" },
     { icon: "folder", text: "My Projects", route: "/projects" },
     { icon: "person", text: "Team", route: "/team" },
   ]
-  readonly linksNotLogged: any = [
+  readonly linksNotLogged = [
     { icon: "login", text: "Sign In", route: "/login" },
     { icon: "logout", text: "Sign Up", route: "/signUp" },
   ]
 
-  created() {
+  created(): void {
     firebase.auth().onAuthStateChanged((user) => {
       this.$store.state.isLogged = !!user
 

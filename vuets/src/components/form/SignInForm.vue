@@ -1,14 +1,25 @@
 <template>
-  <v-form ref="form">
+  <v-form ref="form"
+    ><v-alert
+      v-if="errorMsg.length > 0"
+      border="right"
+      class="mt-4 mb-5"
+      color="pink darken-1"
+      dark
+    >
+      {{ errorMsg }}
+    </v-alert>
     <v-text-field
       v-model="email"
       prepend-icon="mail"
       label="E-mail"
+      :rules="emailRules"
       required
     ></v-text-field>
     <v-text-field
       v-model="password"
       :type="'password'"
+      :rules="passRules"
       prepend-icon="lock"
       label="Password"
       required
@@ -43,22 +54,30 @@ export default class SignInForm extends Vue {
   email = ""
   password = ""
   loading = false
+  errorMsg = ""
+
+  emailRules = [(v: any) => !!v || "E-mail is required"]
+  passRules = [(v: any) => !!v || "Password is required"]
 
   async finishLoad(): Promise<boolean> {
     return (this.loading = true)
   }
   async logIn(): Promise<void> {
-    try {
-      this.loading = true
-      const data = await firebase
-        .auth()
-        .signInWithEmailAndPassword(this.email, this.password)
+    if ((this.$refs.form as Vue & { validate: () => boolean }).validate()) {
+      try {
+        this.loading = true
+        const data = await firebase
+          .auth()
+          .signInWithEmailAndPassword(this.email, this.password)
 
-      this.finishLoad()
+        this.finishLoad()
 
-      this.$router.push("/dashboard")
-    } catch (err) {
-      console.log(err)
+        this.$router.push("/dashboard")
+      } catch (err) {
+        console.log(err)
+        this.loading = false
+        this.errorMsg = err.message
+      }
     }
   }
 }
